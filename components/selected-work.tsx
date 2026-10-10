@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowUpRight,
   GitBranch,
@@ -42,7 +43,13 @@ function ProjectArtwork({
       {image ? (
         <div className="project-art-img-wrap">
           <div className="project-art-card">
-            <img src={image} alt={name} className="project-art-img" />
+            <Image
+              src={image}
+              alt={name}
+              width={600}
+              height={400}
+              className="project-art-img"
+            />
           </div>
         </div>
       ) : (
