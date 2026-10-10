@@ -170,6 +170,7 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     visual: "wall",
+    image: "/images/projects/landmark-wall.png",
     url: "https://wall.landmarkcgm.xyz/",
     urlLabel: "VISIT LIVE WALL",
     repository: "",
