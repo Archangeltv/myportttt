@@ -19,13 +19,14 @@ export interface Project {
   category: string;
   status: ProjectStatus | string;
   summary: string;
-  contribution: string;
+  contribution?: string;
   problem?: string;
   solution?: string;
   metrics?: string;
   stack: string[];
   visual?: "bridge" | "wallet" | "bot" | "game" | "wall";
   image?: string;
+  imageTheme?: "light" | "dark";
   url?: string;
   urlLabel?: string;
   demoUrl?: string;
@@ -106,6 +107,38 @@ export const ladder: LadderRow[] = [
 export const projects: Project[] = [
   {
     number: "01",
+    name: "Archangel Portfolio",
+    tagline:
+      "Interactive Developer Portfolio · Creative Development · Web Engineering",
+    category: "CREATIVE ENGINEERING & PORTFOLIO",
+    status: "PRODUCTION",
+    summary:
+      "My personal portfolio built with bold typography, animated scan lines, scroll-based transitions, and interactive project showcases. Designed to showcase my work, technical skills, and approach to building software.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "GSAP",
+      "Tailwind CSS",
+      "Canvas API",
+    ],
+    visual: "wall",
+    image: "/images/projects/portfolio.png",
+    imageTheme: "dark",
+    url: "#top",
+    urlLabel: "CURRENT SITE",
+    index: "01",
+    tech: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "GSAP ScrollTrigger",
+      "Tailwind CSS",
+      "Canvas API",
+    ],
+  },
+  {
+    number: "02",
     name: "Clyrbot",
     tagline: "Web3, without leaving WhatsApp.",
     category: "WHATSAPP & DISCORD BOT",
@@ -135,7 +168,7 @@ export const projects: Project[] = [
     demoUrl: "https://x.com/AimiuwuVictor/status/2023321744480587950?s=20",
     demoLabel: "VIEW DEMO ON X",
     repository: "",
-    index: "01",
+    index: "02",
     tech: [
       "Node.js",
       "TypeScript",
@@ -147,7 +180,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: "02",
+    number: "03",
     name: "Landmark Wall",
     tagline: "Live vibes and memories from Landmark Youth convention.",
     category: "COMMUNITY WEB APPLICATION",
@@ -171,117 +204,194 @@ export const projects: Project[] = [
     ],
     visual: "wall",
     image: "/images/projects/landmark-wall.png",
+    imageTheme: "dark",
     url: "https://wall.landmarkcgm.xyz/",
     urlLabel: "VISIT LIVE WALL",
     repository: "",
-    index: "02",
-    tech: [
-      "Vite",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "MongoDB",
-      "Tailwind CSS",
-    ],
-  },
-  {
-    number: "03",
-    name: "Wallet Discovery",
-    category: "ON-CHAIN INVESTIGATION TOOL",
-    status: "TOOLING PROJECT",
-    summary:
-      "A Telegram and web tool for discovering and tracking wallets associated with on-chain trading activity.",
-    contribution:
-      "Built around wallet research workflows so users can investigate activity and follow relevant addresses. No public demo or repository link is configured here.",
-    stack: ["TypeScript", "Node.js", "Telegram API", "Web3 APIs"],
-    visual: "wallet",
     index: "03",
-    tech: ["TypeScript", "Node.js", "Telegram API", "Web3 APIs"],
+    tech: ["Vite", "React", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
   },
   {
     number: "04",
-    name: "Web3 Community Bot",
-    category: "COMMUNITY TOOLING",
-    status: "PROTOTYPE",
+    name: "FOMO Scouter",
+    tagline: "Find FOMO traders' on-chain wallets and copytrade their moves.",
+    category: "WEB APP & TELEGRAM BOT",
+    status: "PRODUCTION",
     summary:
-      "A messaging-based assistant concept for giving Web3 communities token context, social data, and alerts in one place.",
+      "Available on both web and Telegram, FOMO Scouter helps degens find FOMO traders' on-chain wallets so they can copytrade them, track their live holdings, and monitor their trades across Solana and EVM.",
     contribution:
-      "Explores a command-first experience with bot integrations, token lookups, and alert workflows. Scope and production status should be updated as the project evolves.",
-    stack: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
-    visual: "bot",
+      "Built both the web app and Telegram bot, handling FOMO handle lookup, on-chain wallet discovery across Solana and EVM, balance scanning, and 1-tap copytrade shortcuts.",
+    stack: [
+      "Next.js",
+      "Grammy",
+      "TypeScript",
+      "Solana",
+      "EVM",
+      "Node.js",
+      "Blockscout API",
+    ],
+    visual: "wallet",
+    image: "/images/projects/fomo-scout.png",
+    imageTheme: "dark",
+    url: "https://fomoscouter.vercel.app/",
+    urlLabel: "OPEN WEB APP",
+    demoUrl: "https://t.me/fomoscouterbot",
+    demoLabel: "TRY ON TELEGRAM",
+    repository: "",
     index: "04",
-    tech: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
+    tech: [
+      "Next.js",
+      "Grammy",
+      "TypeScript",
+      "Solana",
+      "EVM",
+      "Node.js",
+      "Blockscout API",
+    ],
   },
-  {
-    number: "05",
-    name: "Poisoned Cookies",
-    category: "INTERACTIVE GAME CONCEPT",
-    status: "PROTOTYPE",
-    summary:
-      "A two-player strategy-game concept built around hidden choices, decision-making, and a playful 3D presentation.",
-    contribution:
-      "Product exploration focused on clear game-state feedback and lightweight interaction rather than requiring a wallet transaction for every move.",
-    stack: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
-    visual: "game",
-    index: "05",
-    tech: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
-  },
+  // {
+  //   number: "05",
+  //   name: "Web3 Community Bot",
+  //   category: "COMMUNITY TOOLING",
+  //   status: "PROTOTYPE",
+  //   summary:
+  //     "A messaging-based assistant concept for giving Web3 communities token context, social data, and alerts in one place.",
+  //   contribution:
+  //     "Explores a command-first experience with bot integrations, token lookups, and alert workflows. Scope and production status should be updated as the project evolves.",
+  //   stack: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
+  //   visual: "bot",
+  //   index: "05",
+  //   tech: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
+  // },
+  // {
+  //   number: "06",
+  //   name: "Poisoned Cookies",
+  //   category: "INTERACTIVE GAME CONCEPT",
+  //   status: "PROTOTYPE",
+  //   summary:
+  //     "A two-player strategy-game concept built around hidden choices, decision-making, and a playful 3D presentation.",
+  //   contribution:
+  //     "Product exploration focused on clear game-state feedback and lightweight interaction rather than requiring a wallet transaction for every move.",
+  //   stack: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
+  //   visual: "game",
+  //   index: "06",
+  //   tech: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
+  // },
 ];
 
 export const experience: Experience[] = [
   {
     number: "01",
-    company: "Kingdomly",
-    role: "Full Stack Developer",
-    period: "JUL 2023 — SEP 2025",
-    location: "REMOTE · AUSTIN",
+    company: "Clyrbot",
+    role: "Freelance Full-Stack Developer",
+    period: "OCT 2025 — PRESENT",
+    location: "REMOTE",
     summary:
-      "Worked across admin products, employee workflows, backend services, and on-chain data experiences.",
+      "Built and run a WhatsApp and Discord bot bringing crypto charting, NFT analytics, token lookups, and Twitter account tracking into chat.",
     highlights: [
-      "Built administrative, employee-tracking, and automated employee-payout systems.",
-      "Worked on collecting on-chain data and transforming it into analytics, reports, and claim-page experiences across multiple projects.",
-      "Built blockchain-data cron jobs using Node.js and Express.js on custom servers and AWS infrastructure.",
-      "Worked across frontend interfaces, backend services, API integrations, and Web3-related features.",
+      "Designed the product, backend, and integrations end-to-end in Node.js, TypeScript, and PostgreSQL.",
+      "Deployed with Docker and CI/CD for continuous reliability and 24/7 uptime.",
+      "Live across 57 WhatsApp communities with six-plus months of continuous usage, sponsored by The Hunters' Guild.",
     ],
-    technologies: ["Next.js", "React", "Node.js", "Express.js", "AWS", "Web3"],
+    technologies: [
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "CI/CD",
+      "WhatsApp API",
+      "Discord.js",
+    ],
     index: "01",
-    org: "Kingdomly",
+    org: "Clyrbot",
     points: [
-      "Built administrative, employee-tracking, and automated employee-payout systems.",
-      "Worked on collecting on-chain data and transforming it into analytics, reports, and claim-page experiences across multiple projects.",
-      "Built blockchain-data cron jobs using Node.js and Express.js on custom servers and AWS infrastructure.",
-      "Worked across frontend interfaces, backend services, API integrations, and Web3-related features.",
+      "Designed the product, backend, and integrations end-to-end in Node.js, TypeScript, and PostgreSQL.",
+      "Deployed with Docker and CI/CD for continuous reliability and 24/7 uptime.",
+      "Live across 57 WhatsApp communities with six-plus months of continuous usage, sponsored by The Hunters' Guild.",
     ],
-    tech: ["Next.js", "React", "Node.js", "Express.js", "AWS", "Web3"],
+    tech: [
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "CI/CD",
+      "WhatsApp API",
+      "Discord.js",
+    ],
   },
   {
     number: "02",
-    company: "PALREMIT",
-    role: "Frontend Developer",
-    period: "OCT 2023 — FEB 2024",
-    location: "REMOTE · NEWPORT BEACH",
+    company: "Kingdomly",
+    role: "Full-Stack Engineer",
+    period: "JUL 2023 — SEP 2025",
+    location: "REMOTE · AUSTIN, TEXAS",
     summary:
-      "Frontend Developer role recorded in the supplied profile. More detailed deliverables can be added from the full résumé.",
-    highlights: [],
-    technologies: [],
+      "Built blockchain data pipelines across Ethereum, Polygon, Avalanche, and Arbitrum, and migrated the data layer from Firebase to PostgreSQL for performance at scale.",
+    highlights: [
+      "Wrote and shipped Solidity contracts for NFT minting, staking, and rental.",
+      "Integrated the Safe Wallet SDK for multi-signature treasury management.",
+      "Owned deployment on AWS with CI/CD, and mentored junior developers.",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "Solidity",
+      "PostgreSQL",
+      "Safe Wallet SDK",
+      "AWS",
+    ],
     index: "02",
-    org: "PALREMIT",
-    points: [],
-    tech: [],
+    org: "Kingdomly",
+    points: [
+      "Wrote and shipped Solidity contracts for NFT minting, staking, and rental.",
+      "Integrated the Safe Wallet SDK for multi-signature treasury management.",
+      "Owned deployment on AWS with CI/CD, and mentored junior developers.",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "TypeScript",
+      "Solidity",
+      "PostgreSQL",
+      "Safe Wallet SDK",
+      "AWS",
+    ],
   },
   {
     number: "03",
-    company: "Beralabs",
-    role: "Full Stack Developer · Freelance",
+    company: "Palremit",
+    role: "Frontend Engineer",
+    period: "OCT 2023 — FEB 2024",
     location: "REMOTE",
     summary:
-      "Freelance full-stack development work. Dates and project-specific outcomes are intentionally omitted until verified.",
-    highlights: [],
-    technologies: [],
+      "Built the frontend for a cross-border payments platform serving users in 150+ countries.",
+    highlights: [
+      "Integrated payment APIs, FX conversion, and virtual card flows.",
+      "Worked alongside product and backend to keep money movement reliable on the client side.",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
     index: "03",
-    org: "Beralabs",
-    points: [],
-    tech: [],
+    org: "Palremit",
+    points: [
+      "Integrated payment APIs, FX conversion, and virtual card flows.",
+      "Worked alongside product and backend to keep money movement reliable on the client side.",
+    ],
+    tech: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
   },
 ];
 

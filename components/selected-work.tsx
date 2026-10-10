@@ -22,11 +22,13 @@ function ProjectArtwork({
   number,
   image,
   name,
+  imageTheme = "light",
 }: {
   type?: keyof typeof artworkIcons;
   number: string;
   image?: string;
   name: string;
+  imageTheme?: "light" | "dark";
 }) {
   const Icon = artworkIcons[type] ?? RadioTower;
   return (
@@ -39,12 +41,15 @@ function ProjectArtwork({
       <div className="art-corner art-corner--bl" />
       <div className="art-corner art-corner--br" />
       <div className="art-meta mono">
-        <span>AV / STUDY {number}</span>
-        <span>FIG. 0{number}</span>
+        <span>AV / STUDY </span>
       </div>
       {image ? (
         <div className="project-art-img-wrap">
-          <div className="project-art-card">
+          <div
+            className={`project-art-card ${
+              imageTheme === "dark" ? "project-art-card--dark" : ""
+            }`}
+          >
             <Image
               src={image}
               alt={name}
@@ -58,7 +63,7 @@ function ProjectArtwork({
         <>
           <div className="art-core">
             <Icon size={45} strokeWidth={0.8} />
-            <span className="art-core-number">{number}</span>
+            <span className="art-core-number"></span>
           </div>
           <div className="art-grid-lines" />
         </>
@@ -89,8 +94,7 @@ export function SelectedWork() {
         </div>
         <p className="work-intro">
           A selection of product work across blockchain infrastructure, on-chain
-          research, community tooling, and interactive experiences. Status
-          labels distinguish experiments and prototypes from production systems.
+          research, community tooling, and interactive experiences.
         </p>
       </div>
       <div className="project-list wrap">
@@ -104,12 +108,11 @@ export function SelectedWork() {
               number={project.number}
               image={project.image}
               name={project.name}
+              imageTheme={project.imageTheme}
             />
             <div className="project-copy">
               <div className="project-meta mono">
-                <span>
-                  {project.number} / {project.category}
-                </span>
+                <span>{project.category}</span>
                 <span className="project-status">{project.status}</span>
               </div>
               <h3>
@@ -130,9 +133,12 @@ export function SelectedWork() {
                   <span className="mono">WHAT IT DOES:</span> {project.solution}
                 </p>
               ) : null}
-              <p className="project-contribution">
-                <span className="mono">WHAT I OWNED:</span> {project.contribution}
-              </p>
+              {project.contribution ? (
+                <p className="project-contribution">
+                  <span className="mono">WHAT I OWNED:</span>{" "}
+                  {project.contribution}
+                </p>
+              ) : null}
               <div className="project-tech mono" aria-label="Technologies used">
                 {project.stack.map((technology) => (
                   <span key={technology}>{technology}</span>
@@ -140,13 +146,20 @@ export function SelectedWork() {
               </div>
               <div className="project-links">
                 {project.url ? (
-                  <a href={project.url} target="_blank" rel="noreferrer">
-                    {project.urlLabel ?? "LIVE PROJECT"} <ArrowUpRight size={16} />
+                  <a
+                    href={project.url}
+                    {...(project.url.startsWith("http")
+                      ? { target: "_blank", rel: "noreferrer" }
+                      : {})}
+                  >
+                    {project.urlLabel ?? "LIVE PROJECT"}{" "}
+                    <ArrowUpRight size={16} />
                   </a>
                 ) : null}
                 {project.demoUrl ? (
                   <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                    {project.demoLabel ?? "VIEW DEMO ON X"} <ArrowUpRight size={16} />
+                    {project.demoLabel ?? "VIEW DEMO ON X"}{" "}
+                    <ArrowUpRight size={16} />
                   </a>
                 ) : null}
                 {project.repository ? (

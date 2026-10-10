@@ -169,7 +169,13 @@ export default function Hero() {
         // Step 0: Splash name scales down and dissolves
         tl.to(
           ".h-name",
-          { scale: 0.65, opacity: 0, y: -25, ease: "power1.inOut", duration: 0.6 },
+          {
+            scale: 0.65,
+            opacity: 0,
+            y: -25,
+            ease: "power1.inOut",
+            duration: 0.6,
+          },
           0,
         )
           .to(".h-meta", { opacity: 0, ease: "none", duration: 0.25 }, 0)
@@ -249,7 +255,7 @@ export default function Hero() {
     >
       <div className="hero-stick">
         <ScanlineCanvas />
-        <div className="wrap relative z-10 w-full max-w-5xl px-4 sm:px-8">
+        <div className="wrap relative z-10 w-full max-w-6xl px-4 sm:px-8">
           <div className="hero-stack">
             <div className="h-name">
               <p className="meta mb-4 text-accent">{identity.nickname}</p>
@@ -265,25 +271,27 @@ export default function Hero() {
               className="h-slide h-slide--1"
               aria-label="About: The person behind the code"
             >
-              <p className="mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-3">
-                01 / THE PERSON BEHIND THE CODE
-              </p>
-              <h2 className="display text-[clamp(1.75rem,4.6vw,4.25rem)] leading-[1.08] tracking-tight uppercase">
+              <h2 className="display text-[clamp(2.2rem,6.5vw,5.2rem)] leading-[0.94] tracking-[-0.04em] uppercase">
                 A DEVELOPER BY PROFESSION.
                 <br />
                 A THINKER BY NATURE.
                 <br />
                 <span className="text-accent">A NERD AT HEART.</span>
               </h2>
-              <p className="meta mt-5 text-[clamp(0.95rem,1.35vw,1.2rem)] leading-relaxed opacity-85 max-w-[58ch] mx-auto">
-                I&apos;m <strong>Aimiuwu Victor</strong>, better known as{" "}
-                <strong>Archangel</strong>. A Full Stack Software Developer from
-                Lagos, Nigeria, with a love for problem-solving, thoughtful
-                design, and understanding how things work beneath the surface.
-                Drawn to the kind of problems that make you stop, think,
-                experiment, get things wrong, and keep going until everything
-                finally clicks.
-              </p>
+              <div className="h-slide-desc">
+                <p>
+                  I&apos;m <strong>Aimiuwu Victor Idahosa</strong>, better known
+                  as <strong>Archangel</strong>. I&apos;m a Full Stack Software
+                  Developer from Lagos, Nigeria, with a love for
+                  problem-solving, thoughtful design, and understanding how
+                  things work beneath the surface.
+                </p>
+                <p>
+                  I&apos;m drawn to the kind of problems that make you stop,
+                  think, experiment, get things wrong, and keep going until
+                  everything finally clicks.
+                </p>
+              </div>
             </div>
 
             {/* Slide 2 */}
@@ -291,22 +299,25 @@ export default function Hero() {
               className="h-slide h-slide--2"
               aria-label="About: Patterns and logic"
             >
-              <p className="mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-3">
-                02 / PATTERNS &amp; LOGIC
-              </p>
-              <h2 className="display text-[clamp(1.75rem,4.6vw,4.25rem)] leading-[1.08] tracking-tight uppercase">
+              <h2 className="display text-[clamp(2.2rem,6.5vw,5.2rem)] leading-[0.94] tracking-[-0.04em] uppercase">
                 PATTERNS, LOGIC, STRATEGY.
                 <br />
                 TURNING IDEAS INTO{" "}
                 <span className="text-accent">SOMETHING REAL.</span>
               </h2>
-              <p className="meta mt-5 text-[clamp(0.95rem,1.35vw,1.2rem)] leading-relaxed opacity-85 max-w-[58ch] mx-auto">
-                Mathematics has always appealed to that side of me — logic,
-                patterns, strategy, and the satisfaction of working something out
-                for myself. For me, coding is more than writing instructions for
-                a computer; it&apos;s a way to turn ideas into something real,
-                useful, and interactive.
-              </p>
+              <div className="h-slide-desc">
+                <p>
+                  Mathematics has always appealed to that side of me. I enjoy
+                  patterns, logic, strategy, and the satisfaction of working
+                  something out for myself.
+                </p>
+                <p>
+                  That same curiosity is what drew me to software development.
+                  For me, coding is more than writing instructions for a
+                  computer; it&apos;s a way to turn ideas into something real,
+                  useful, and interactive.
+                </p>
+              </div>
             </div>
 
             {/* Slide 3 */}
@@ -314,25 +325,34 @@ export default function Hero() {
               className="h-slide h-slide--3"
               aria-label="About: From curiosity to code"
             >
-              <p className="mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-3">
-                03 / FROM CURIOSITY TO CODE
-              </p>
-              <h2 className="display text-[clamp(1.75rem,4.6vw,4.25rem)] leading-[1.08] tracking-tight uppercase">
+              <h2 className="display text-[clamp(2.2rem,6.5vw,5.2rem)] leading-[0.94] tracking-[-0.04em] uppercase">
                 FROM FIRST SYNTAX IN 2020
                 <br />
                 TO <span className="text-accent">FULL-STACK SYSTEMS.</span>
               </h2>
-              <p className="meta mt-5 text-[clamp(0.95rem,1.35vw,1.2rem)] leading-relaxed opacity-85 max-w-[62ch] mx-auto">
-                My journey started in <strong>2020</strong> with HTML and my
-                first certificate through SoloLearn. Explored design to appreciate
-                how digital products look and communicate, then committed to
-                full-stack engineering in <strong>2022</strong>. In{" "}
-                <strong>2023</strong>, I stepped into production roles building
-                interfaces, backend workflows, databases, APIs, and Web3
-                integrations. Studied Computer Science at{" "}
-                <InlineTag src="/images/about/lasu.jpg" label="LASU" /> and
-                completed my NYSC in <strong>2026</strong>.
-              </p>
+              <div className="h-slide-desc">
+                <p>
+                  My journey into tech started in <strong>2020</strong>, after I
+                  left school. I began learning HTML and earned my first HTML
+                  certificate through SoloLearn that same year. It was a small
+                  first step, but it opened the door to an entirely new world.
+                </p>
+                <p>
+                  From there, I explored design and learned to appreciate how
+                  digital products look, feel, and communicate. Eventually, I
+                  found my place in full-stack development in{" "}
+                  <strong>2022</strong>, where the creative side of building
+                  interfaces meets the logical side of engineering systems.
+                </p>
+                <p>
+                  In <strong>2023</strong>, I landed my first developer role and
+                  began turning what I had learned into real-world experience
+                  across frontend development, backend systems, databases, APIs,
+                  and Web3 integrations. I also studied Computer Science at{" "}
+                  <InlineTag src="/images/about/lasu.jpg" label="LASU" /> and
+                  completed my <strong>NYSC in 2026</strong>.
+                </p>
+              </div>
             </div>
 
             {/* Slide 4 */}
@@ -340,33 +360,52 @@ export default function Hero() {
               className="h-slide h-slide--4"
               aria-label="About: Off the clock and interests"
             >
-              <p className="mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-2">
-                04 / A LITTLE ABOUT ME · OFF THE CLOCK
-              </p>
-              <h2 className="display text-[clamp(1.75rem,4.4vw,4.1rem)] leading-[1.08] tracking-tight uppercase">
+              <h2 className="display text-[clamp(2.2rem,6.5vw,5.2rem)] leading-[0.94] tracking-[-0.04em] uppercase">
                 THE THINGS THAT
                 <br />
                 <span className="text-accent">MAKE ME, ME.</span>
               </h2>
-              <p className="meta mt-4 text-[clamp(0.9rem,1.25vw,1.15rem)] leading-relaxed opacity-90 max-w-[66ch] mx-auto">
-                Introverted and comfortable in my own space. Exploring patterns
-                across
-                <InlineTag svg={<MathIcon />} label="Mathematics" />
-                <InlineTag svg={<RubiksIcon />} label="Rubik's Cube" />
-                <InlineTag svg={<SudokuIcon />} label="Sudoku" />
-                <InlineTag svg={<ChessIcon />} label="Chess" />
-                <InlineTag svg={<ScrabbleIcon />} label="Scrabble" />.
-                Competing in
-                <InlineTag src="/images/about/codm.jpg" label="COD Mobile" /> and
-                <InlineTag src="/images/about/onestate.jpg" label="OneState RP" />.
-                Rooting for
-                <InlineTag src="/images/about/liverpool.jpg" label="Liverpool FC" />,
-                standing firm that
-                <InlineTag src="/images/about/messi.jpg" label="Messi is the GOAT" />,
-                and playing
-                <InlineTag src="/images/about/spotify.jpg" label="Santan Dave" /> on
-                repeat on Spotify since 2022.
-              </p>
+              <div className="h-slide-desc">
+                <p>
+                  I&apos;m naturally introverted, and I genuinely enjoy my own
+                  space. I&apos;d rather spend time thinking, learning something
+                  new, playing a game, or getting absorbed in an interest that
+                  most people might consider a little too nerdy.
+                </p>
+                <p>
+                  I love <InlineTag svg={<MathIcon />} label="Mathematics" />,
+                  but I also enjoy solving a{" "}
+                  <InlineTag svg={<RubiksIcon />} label="Rubik's Cube" />,
+                  playing <InlineTag svg={<SudokuIcon />} label="Sudoku" />,{" "}
+                  <InlineTag svg={<ScrabbleIcon />} label="Scrabble" />, and{" "}
+                  <InlineTag svg={<ChessIcon />} label="Chess" />.
+                </p>
+                <p>
+                  Gaming is another big part of my world, especially{" "}
+                  <InlineTag src="/images/about/codm.jpg" label="COD Mobile" />{" "}
+                  and{" "}
+                  <InlineTag
+                    src="/images/about/onestate.jpg"
+                    label="OneState RP"
+                  />
+                  . When it comes to football, I&apos;m a{" "}
+                  <InlineTag
+                    src="/images/about/liverpool.jpg"
+                    label="Liverpool FC"
+                  />{" "}
+                  supporter, and for me,{" "}
+                  <InlineTag
+                    src="/images/about/messi.jpg"
+                    label="Lionel Messi is the GOAT"
+                  />
+                  . Music is just as personal :{" "}
+                  <InlineTag
+                    src="/images/about/spotify.jpg"
+                    label="Santan Dave"
+                  />{" "}
+                  has been my top Spotify artist since 2022.
+                </p>
+              </div>
             </div>
 
             {/* Slide 5 */}
@@ -374,25 +413,29 @@ export default function Hero() {
               className="h-slide h-slide--5"
               aria-label="About: A little more than a developer"
             >
-              <p className="mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-3">
-                05 / A LITTLE MORE THAN A DEVELOPER
-              </p>
-              <h2 className="display text-[clamp(1.75rem,4.6vw,4.25rem)] leading-[1.08] tracking-tight uppercase">
+              <h2 className="display text-[clamp(2.2rem,6.5vw,5.2rem)] leading-[0.94] tracking-[-0.04em] uppercase">
                 I DON&apos;T NEED TO BE THE LOUDEST.
-                <br />
-                I LET WHAT I BUILD{" "}
+                <br />I LET WHAT I BUILD{" "}
                 <span className="text-accent">SPEAK FOR ME.</span>
               </h2>
-              <p className="meta mt-5 text-[clamp(0.95rem,1.35vw,1.2rem)] leading-relaxed opacity-85 max-w-[58ch] mx-auto">
-                I value my privacy, enjoy room to explore my interests, and
-                appreciate the little details others might overlook. One side
-                thinks about how something should feel; the other works out how
-                to make it happen.
-              </p>
-              <p className="mono text-accent text-xs sm:text-sm tracking-wider uppercase mt-5">
-                I&apos;m Archangel — solving problems, building useful things,
-                and figuring out the world one curiosity at a time.
-              </p>
+              <div className="h-slide-desc">
+                <p>
+                  I like things that make me think. I value my privacy, enjoy
+                  having room to explore my interests, and appreciate the little
+                  details that other people might overlook.
+                </p>
+                <p>
+                  That probably explains why I&apos;m drawn to both creative
+                  design and technical engineering. One lets me think about how
+                  something should feel; the other lets me work out how to make
+                  it happen.
+                </p>
+                <p className="mono text-accent text-xs sm:text-sm tracking-wider uppercase mt-4">
+                  I&apos;m Archangel. I like solving problems, building useful
+                  things, and figuring out how the world works, one curiosity at
+                  a time.
+                </p>
+              </div>
             </div>
           </div>
         </div>
