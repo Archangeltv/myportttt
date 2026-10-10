@@ -1,23 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { projects } from "@/lib/portfolio-data";
 
 const LINES = [12, 28, 44, 60, 76, 90];
 
-const STATIC_IMAGES: string[] = [
-  ...projects.map((p) => p.image).filter((img): img is string => Boolean(img)),
-  "/images/about/lasu.jpg",
-  "/images/about/codm.jpg",
-  "/images/about/onestate.jpg",
-  "/images/about/liverpool.jpg",
-  "/images/about/messi.jpg",
-  "/images/about/spotify.jpg",
-];
-
 export default function PortfolioLoader() {
   const [progress, setProgress] = useState(0);
-  const [statusText, setStatusText] = useState("INITIALIZING PORTFOLIO");
-  const [subText, setSubText] = useState("COMPILING IDEAS INTO INTERFACES");
   const [done, setDone] = useState(false);
   const [gone, setGone] = useState(false);
 
@@ -26,87 +13,22 @@ export default function PortfolioLoader() {
     let raf = 0;
     let finished = false;
     const start = performance.now();
-    const MIN = reduced ? 0 : 900; // brief minimum for animation rhythm
-    const MAX = 2500;              // safety: never block the page
-
-    let loadedCount = 0;
-    // Collect all candidate sources to lazy-load
-    const domImages = Array.from(document.querySelectorAll<HTMLImageElement>("img"));
-    const domSources = domImages
-      .map((img) => img.currentSrc || img.getAttribute("src") || "")
-      .filter(Boolean);
-
-    const allSources = Array.from(new Set([...STATIC_IMAGES, ...domSources]));
-    const totalCount = allSources.length;
+    const MIN = reduced ? 0 : 500; // fast and snappy
+    const MAX = 1100;              // quick safety cap
 
     const finish = () => {
       if (!finished) {
         finished = true;
         setProgress(100);
-        setStatusText("SYSTEMS READY");
-        setSubText("SYSTEMS NOMINAL");
         setDone(true);
       }
     };
 
-    const onItemLoaded = () => {
-      loadedCount++;
-    };
-
-    // Lazy load and decode each image in the background
-    allSources.forEach((src) => {
-      try {
-        const img = new window.Image();
-        let settled = false;
-        const settle = () => {
-          if (!settled) {
-            settled = true;
-            onItemLoaded();
-          }
-        };
-
-        img.onload = settle;
-        img.onerror = settle;
-        img.src = src;
-
-        if ("decode" in img) {
-          img.decode().then(settle).catch(settle);
-        }
-      } catch {
-        onItemLoaded();
-      }
-    });
-
-    // Also trigger decode on any existing DOM images if available
-    domImages.forEach((img) => {
-      if ("decode" in img && !img.complete) {
-        img.decode().catch(() => {});
-      }
-    });
-
     const tick = (now: number) => {
       const t = now - start;
-      const timeRatio = Math.min(1, t / MAX);
-      const imgRatio = totalCount > 0 ? loadedCount / totalCount : 1;
-      const allLoaded = totalCount === 0 || loadedCount >= totalCount;
-      const isDocReady =
-        document.readyState === "complete" || document.readyState === "interactive";
-
-      // Dynamically calculate progress based on time and asset lazy-loading progress
-      const targetProgress = Math.min(
-        allLoaded ? 100 : 92,
-        Math.max(timeRatio * 90, imgRatio * 90)
-      );
-
-      setProgress((p) => Math.min(100, Math.max(p, Math.round(targetProgress))));
-
-      if (targetProgress > 70 && !finished) {
-        setSubText("LAZY LOADING ASSETS & MEDIA");
-      } else if (targetProgress > 30 && !finished) {
-        setSubText("CACHING VISUAL ASSETS");
-      }
-
-      if ((allLoaded && isDocReady && t >= MIN) || t >= MAX) {
+      const loaded = document.readyState === "complete";
+      setProgress((p) => Math.min(loaded ? 100 : 92, Math.max(p, (t / MAX) * 92)));
+      if ((loaded && t >= MIN) || t >= MAX) {
         finish();
       } else {
         raf = requestAnimationFrame(tick);
@@ -122,7 +44,7 @@ export default function PortfolioLoader() {
 
   useEffect(() => {
     if (!done) return;
-    const id = setTimeout(() => setGone(true), 1000);
+    const id = setTimeout(() => setGone(true), 900);
     return () => clearTimeout(id);
   }, [done]);
 
@@ -164,8 +86,8 @@ export default function PortfolioLoader() {
           <span style={{ width: `${progress}%` }} />
         </div>
         <div>
-          <p className="meta">{statusText}</p>
-          <p className="meta mt-2 opacity-55">{subText}</p>
+          <p className="meta">INITIALIZING PORTFOLIO</p>
+          <p className="meta mt-2 opacity-55">COMPILING IDEAS INTO INTERFACES</p>
         </div>
       </div>
     </div>

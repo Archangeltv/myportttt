@@ -123,7 +123,8 @@ function InlineTag({
           width={18}
           height={18}
           className="inline-tag-img"
-          loading="lazy"
+          unoptimized
+          loading="eager"
           decoding="async"
         />
       ) : svg ? (
