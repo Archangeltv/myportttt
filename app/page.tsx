@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <PortfolioLoader />
       <Navigation />
-      <main>
+      <main id="main-content">
         <Hero />
         <NumericLadder />
         <Manifesto />

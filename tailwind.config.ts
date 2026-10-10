@@ -4,7 +4,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0B0E14", deep: "#07090D", glacier: "#F2F4F1", soft: "#FAFBFA", accent: "#FF4D00",
+        ink: "#0B0E14", deep: "#07090D", glacier: "#F2F4F1", soft: "#FAFBFA", accent: "var(--accent)",
       },
       fontFamily: { display: ["var(--font-archivo)", "Arial Narrow", "sans-serif"], mono: ["var(--font-mono)", "monospace"] },
     },

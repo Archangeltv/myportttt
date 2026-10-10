@@ -114,6 +114,24 @@ export function NumericLadder() {
                 className={`ladder-row ${index === i ? "ladder-row--active" : ""}`}
                 key={item.year}
                 data-on={index === i}
+                role="button"
+                tabIndex={0}
+                aria-label={`View career note for ${item.year}: ${item.title}`}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setI(index);
+                    if (activeYearRef.current) {
+                      const digits = activeYearRef.current.querySelectorAll("span");
+                      if (digits[0]) digits[0].textContent = item.year.slice(0, 2);
+                      if (digits[1]) digits[1].textContent = item.year.slice(2);
+                    }
+                    rowRefs.current.forEach((row, rowIndex) => {
+                      if (!row) return;
+                      row.classList.toggle("ladder-row--active", rowIndex === index);
+                    });
+                  }
+                }}
                 onClick={() => {
                   setI(index);
                   if (activeYearRef.current) {

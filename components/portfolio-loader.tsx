@@ -35,7 +35,7 @@ export default function PortfolioLoader() {
 
   if (gone) return null;
   return (
-    <div className="loader" data-done={done} role="status" aria-live="polite" aria-label="Loading portfolio">
+    <div className="loader" data-done={done} role="status" aria-live="polite" aria-label="Loading portfolio" aria-hidden={done}>
       {LINES.map((top, i) => (
         <span key={top} aria-hidden="true" className="loader__line" style={{ top: `${top}%`, animationDuration: `${1.4 + i * 0.5}s`, animationDelay: `${-i * 0.4}s` }} />
       ))}

@@ -118,13 +118,14 @@ function InlineTag({
       {src ? (
         <Image
           src={src}
-          alt={label}
+          alt=""
+          aria-hidden="true"
           width={18}
           height={18}
           className="inline-tag-img"
         />
       ) : svg ? (
-        <span className="inline-tag-svg-wrap">{svg}</span>
+        <span className="inline-tag-svg-wrap" aria-hidden="true">{svg}</span>
       ) : null}
       <span>{label}</span>
     </span>
@@ -455,13 +456,13 @@ export default function Hero() {
               <span className="text-accent font-bold">
                 {chapter > 0 ? `0${chapter} / 05` : "01 / 05"}
               </span>
-              <span className="hidden sm:inline opacity-30">—</span>
-              <span className="hidden sm:inline tracking-wider opacity-80 uppercase text-[11px]">
+              <span className="hidden sm:inline opacity-60" aria-hidden="true">—</span>
+              <span className="hidden sm:inline tracking-wider opacity-90 uppercase text-[11px]">
                 {CHAPTERS[(chapter > 0 ? chapter : 1) - 1].title}
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="opacity-40 text-[10px] tracking-wider uppercase">
+              <span className="opacity-80 text-[10px] tracking-wider uppercase font-semibold">
                 SCROLL TO READ
               </span>
               <div className="w-24 sm:w-36 h-[2px] bg-white/10 rounded-full overflow-hidden">

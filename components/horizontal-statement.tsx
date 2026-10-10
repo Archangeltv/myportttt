@@ -51,6 +51,7 @@ export function HorizontalStatement() {
       aria-label="How I build digital products"
     >
       <div className="statement-viewport" ref={viewportRef}>
+        <h2 className="sr-only">How I build digital products: from interface to system, data, and deployment</h2>
         <div className="statement-topline wrap">
           <span className="section-index mono">THE METHOD</span>
           <span className="mono">END-TO-END PRODUCT ENGINEERING</span>

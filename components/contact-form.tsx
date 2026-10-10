@@ -59,18 +59,21 @@ export default function ContactForm() {
             </ul>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
-            <div className="hidden" aria-hidden="true"><label>Website<input tabIndex={-1} autoComplete="off" {...register("website")} /></label></div>
+            <div className="sr-only" style={{ display: "none" }}>
+              <label htmlFor="website-hp">Website</label>
+              <input id="website-hp" tabIndex={-1} autoComplete="off" {...register("website")} />
+            </div>
             {(["name", "email", "subject"] as const).map((f) => (
               <div key={f}>
-                <label htmlFor={f} className="meta opacity-70">{f}</label>
+                <label htmlFor={f} className="meta opacity-90">{f}</label>
                 <input id={f} type={f === "email" ? "email" : "text"} autoComplete={f === "subject" ? "off" : f} aria-invalid={!!errors[f]} aria-describedby={errors[f] ? `${f}-e` : undefined} className="field" {...register(f)} />
                 <div id={`${f}-e`}>{err(errors[f]?.message)}</div>
               </div>
             ))}
             <div>
-              <label htmlFor="message" className="meta opacity-70">message</label>
-              <textarea id="message" rows={5} aria-invalid={!!errors.message} className="field" {...register("message")} />
-              {err(errors.message?.message)}
+              <label htmlFor="message" className="meta opacity-90">message</label>
+              <textarea id="message" rows={5} aria-invalid={!!errors.message} aria-describedby={errors.message ? "message-e" : undefined} className="field" {...register("message")} />
+              <div id="message-e">{err(errors.message?.message)}</div>
             </div>
             <button disabled={isSubmitting} className="meta border border-accent bg-accent px-6 py-3 text-ink transition-colors hover:bg-transparent hover:text-accent disabled:opacity-50">{isSubmitting ? "SENDING" : "SEND MESSAGE ↗"}</button>
             <div aria-live="polite" className="text-[15px]">

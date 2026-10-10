@@ -27,7 +27,7 @@ export function HowIWork() {
   return (
     <section
       className="principles-section section-light"
-      aria-labelledby="principles-heading"
+      aria-labelledby="endorsement-heading"
     >
       <div className="section-topline wrap">
         <span className="section-index mono">ENDORSEMENT</span>
@@ -35,10 +35,11 @@ export function HowIWork() {
       </div>
 
       <div className="wrap pt-12 pb-4">
+        <h2 id="endorsement-heading" className="sr-only">Executive Recommendation and Endorsement</h2>
         <div className="border border-[var(--rule-light)] bg-[var(--glacier)] p-6 sm:p-10 transition-all">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--rule-light)] pb-5">
             <div className="flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center bg-accent text-white">
+              <span className="flex h-8 w-8 items-center justify-center bg-accent text-white" aria-hidden="true">
                 <FileCheck2 size={16} />
               </span>
               <div>
@@ -54,9 +55,10 @@ export function HowIWork() {
               href="/Kingdomly_Recommendation_Letter.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View official recommendation letter from Kingdomly Corp (PDF)"
               className="meta inline-flex items-center gap-2 border border-[var(--rule-light)] bg-[var(--paper)] px-4 py-2 text-xs font-bold transition-colors hover:border-accent hover:text-accent"
             >
-              VIEW OFFICIAL LETTER (PDF) <ArrowUpRight size={14} />
+              VIEW OFFICIAL LETTER (PDF) <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
 

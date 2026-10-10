@@ -74,6 +74,12 @@ export function Navigation() {
           : "border-b border-transparent"
       }`}
     >
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-ink focus:font-mono focus:text-xs focus:font-bold focus:shadow-lg focus:outline-none"
+      >
+        Skip to content
+      </a>
       <div className="wrap flex h-16 items-center justify-between text-[var(--on-dark)]">
         <a href="#top" className="flex items-baseline gap-3" aria-label={`${identity.name}, back to top`}>
           <span className="display text-2xl">AV.</span>
@@ -82,21 +88,22 @@ export function Navigation() {
 
         <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
           {NAV.map((n) => (
-            <a key={n.id} href={`#${n.id}`} className="nav-link meta" aria-current={active === n.id}>{n.label}</a>
+            <a key={n.id} href={`#${n.id}`} className="nav-link meta" aria-current={active === n.id ? "page" : undefined}>{n.label}</a>
           ))}
           <a
             href="/Aimiuwu_Victor_CV.pdf"
             download="Aimiuwu_Victor_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Download Curriculum Vitae (PDF)"
             className="nav-link meta flex items-center gap-1.5 border border-white/20 px-3.5 py-1.5 text-white/90 transition-all duration-300 hover:border-accent hover:text-accent"
           >
-            CV <ArrowDownToLine size={13} />
+            CV <ArrowDownToLine size={13} aria-hidden="true" />
           </a>
           <a href="#contact" className="meta border border-accent bg-accent px-4 py-2 text-ink transition-colors duration-300 hover:bg-transparent hover:text-accent">LET&apos;S TALK ↗</a>
         </nav>
 
-        <button ref={toggleRef} className="p-2 md:hidden" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
+        <button ref={toggleRef} className="p-2 md:hidden" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={open ? "mobile-menu" : undefined} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
         </button>
       </div>
@@ -106,7 +113,7 @@ export function Navigation() {
           <ul className="wrap flex flex-col py-6">
             {NAV.map((n) => (
               <li key={n.id} className="border-b border-white/10">
-                <a href={`#${n.id}`} onClick={() => setOpen(false)} className="display block py-4 text-4xl" aria-current={active === n.id}>{n.label}</a>
+                <a href={`#${n.id}`} onClick={() => setOpen(false)} className="display block py-4 text-4xl" aria-current={active === n.id ? "page" : undefined}>{n.label}</a>
               </li>
             ))}
             <li className="border-b border-white/10">

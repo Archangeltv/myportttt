@@ -148,23 +148,34 @@ export function SelectedWork() {
                 {project.url ? (
                   <a
                     href={project.url}
+                    aria-label={`View live project: ${project.name}`}
                     {...(project.url.startsWith("http")
                       ? { target: "_blank", rel: "noreferrer" }
                       : {})}
                   >
                     {project.urlLabel ?? "LIVE PROJECT"}{" "}
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={16} aria-hidden="true" />
                   </a>
                 ) : null}
                 {project.demoUrl ? (
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View demo for ${project.name} on X`}
+                  >
                     {project.demoLabel ?? "VIEW DEMO ON X"}{" "}
-                    <ArrowUpRight size={16} />
+                    <ArrowUpRight size={16} aria-hidden="true" />
                   </a>
                 ) : null}
                 {project.repository ? (
-                  <a href={project.repository} target="_blank" rel="noreferrer">
-                    SOURCE <ArrowUpRight size={16} />
+                  <a
+                    href={project.repository}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View source code repository for ${project.name}`}
+                  >
+                    SOURCE <ArrowUpRight size={16} aria-hidden="true" />
                   </a>
                 ) : null}
                 {!project.url && !project.demoUrl && !project.repository ? (
