@@ -139,17 +139,23 @@ export function SelectedWork() {
               <div className="project-links">
                 {project.url ? (
                   <a href={project.url} target="_blank" rel="noreferrer">
-                    LIVE PROJECT <ArrowUpRight size={16} />
+                    {project.urlLabel ?? "LIVE PROJECT"} <ArrowUpRight size={16} />
                   </a>
-                ) : (
-                  <span className="project-no-link mono">
-                    PUBLIC LINK NOT PROVIDED
-                  </span>
-                )}
+                ) : null}
+                {project.demoUrl ? (
+                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                    {project.demoLabel ?? "VIEW DEMO ON X"} <ArrowUpRight size={16} />
+                  </a>
+                ) : null}
                 {project.repository ? (
                   <a href={project.repository} target="_blank" rel="noreferrer">
                     SOURCE <ArrowUpRight size={16} />
                   </a>
+                ) : null}
+                {!project.url && !project.demoUrl && !project.repository ? (
+                  <span className="project-no-link mono">
+                    PUBLIC LINK NOT PROVIDED
+                  </span>
                 ) : null}
               </div>
             </div>

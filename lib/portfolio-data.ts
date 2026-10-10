@@ -27,6 +27,9 @@ export interface Project {
   visual?: "bridge" | "wallet" | "bot" | "game";
   image?: string;
   url?: string;
+  urlLabel?: string;
+  demoUrl?: string;
+  demoLabel?: string;
   repository?: string;
   index?: string;
   tech?: string[];
@@ -67,6 +70,7 @@ export const identity = {
 
 // Add only real URLs; nothing is rendered for missing destinations.
 export const links: { label: string; href: string }[] = [
+  { label: "X / Twitter", href: "https://x.com/AimiuwuVictor" },
   { label: "Email", href: `mailto:${identity.email}` },
 ];
 
@@ -126,7 +130,10 @@ export const projects: Project[] = [
     ],
     visual: "bot",
     image: "/images/projects/clyrbot.png",
-    url: "",
+    url: "https://api.whatsapp.com/send?phone=2348057416596&text=Hi",
+    urlLabel: "TRY ON WHATSAPP",
+    demoUrl: "https://x.com/AimiuwuVictor/status/2023321744480587950?s=20",
+    demoLabel: "VIEW DEMO ON X",
     repository: "",
     index: "01",
     tech: [
