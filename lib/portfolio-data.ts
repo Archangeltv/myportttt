@@ -24,7 +24,7 @@ export interface Project {
   solution?: string;
   metrics?: string;
   stack: string[];
-  visual?: "bridge" | "wallet" | "bot" | "game";
+  visual?: "bridge" | "wallet" | "bot" | "game" | "wall";
   image?: string;
   url?: string;
   urlLabel?: string;
@@ -148,6 +148,43 @@ export const projects: Project[] = [
   },
   {
     number: "02",
+    name: "Landmark Wall",
+    tagline: "Live vibes and memories from Landmark Youth convention.",
+    category: "COMMUNITY WEB APPLICATION",
+    status: "PRODUCTION",
+    summary:
+      "A real-time vibe wall and interactive community board built for a church youth convention, allowing campers and attendees to post live thoughts, reactions, and memories throughout the program.",
+    contribution:
+      "Engineered the full-stack web application end-to-end: responsive mobile-first UI using Vite and React, MongoDB database for persisting vibes and posts, photo upload workflows, and cloud deployment.",
+    problem:
+      "During conventions and youth camps, attendees lack an easy, instant channel to share live reactions, celebrate camp moments, and engage collectively without tedious account registrations or fragmented chats.",
+    solution:
+      "Built a live social board where campers post messages, photos, and vibes in real time. Designed for fast mobile submissions and projected live on screens during camp sessions.",
+    metrics: "Live in Production · Convention Camp Feed",
+    stack: [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    visual: "wall",
+    url: "https://wall.landmarkcgm.xyz/",
+    urlLabel: "VISIT LIVE WALL",
+    repository: "",
+    index: "02",
+    tech: [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    number: "03",
     name: "Wallet Discovery",
     category: "ON-CHAIN INVESTIGATION TOOL",
     status: "TOOLING PROJECT",
@@ -157,11 +194,11 @@ export const projects: Project[] = [
       "Built around wallet research workflows so users can investigate activity and follow relevant addresses. No public demo or repository link is configured here.",
     stack: ["TypeScript", "Node.js", "Telegram API", "Web3 APIs"],
     visual: "wallet",
-    index: "02",
+    index: "03",
     tech: ["TypeScript", "Node.js", "Telegram API", "Web3 APIs"],
   },
   {
-    number: "03",
+    number: "04",
     name: "Web3 Community Bot",
     category: "COMMUNITY TOOLING",
     status: "PROTOTYPE",
@@ -171,11 +208,11 @@ export const projects: Project[] = [
       "Explores a command-first experience with bot integrations, token lookups, and alert workflows. Scope and production status should be updated as the project evolves.",
     stack: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
     visual: "bot",
-    index: "03",
+    index: "04",
     tech: ["Node.js", "TypeScript", "Telegram / WhatsApp APIs", "MongoDB"],
   },
   {
-    number: "04",
+    number: "05",
     name: "Poisoned Cookies",
     category: "INTERACTIVE GAME CONCEPT",
     status: "PROTOTYPE",
@@ -185,7 +222,7 @@ export const projects: Project[] = [
       "Product exploration focused on clear game-state feedback and lightweight interaction rather than requiring a wallet transaction for every move.",
     stack: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
     visual: "game",
-    index: "04",
+    index: "05",
     tech: ["React", "TypeScript", "Supabase", "Canvas / CSS"],
   },
 ];

@@ -171,6 +171,8 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .project-art--bot .art-core::before { border-radius: 18px; }
 .project-art--game .art-core { background: rgba(255,77,0,.025); }
 .project-art--game .art-grid-lines { transform: rotate(-11deg) scale(1.2); }
+.project-art--wall .art-core::before { border-radius: 14px; }
+.project-art--wall .art-grid-lines { transform: rotate(12deg) scale(1.15); }
 .project-copy { min-width: 0; }
 .project-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--rule-dark); color: var(--muted-dark); font-size: 8px; }
 .project-status { color: var(--accent); }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   GitBranch,
+  MessageSquareHeart,
   Network,
   RadioTower,
   Sparkles,
@@ -13,6 +14,7 @@ const artworkIcons = {
   wallet: GitBranch,
   bot: RadioTower,
   game: Sparkles,
+  wall: MessageSquareHeart,
 };
 
 function ProjectArtwork({
