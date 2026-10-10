@@ -72,11 +72,71 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .rev.in { opacity: 1; transform: none; }
 
 /* Hero */
-.hero-wrap { height: 300svh; position: relative; }
+.hero-wrap { height: 600svh; position: relative; }
 .hero-stick { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
-.hero-stack { display: grid; place-items: center; text-align: center; width: 100%; }
-.hero-stack > * { grid-area: 1 / 1; }
+.hero-stack { display: grid; place-items: center; text-align: center; width: 100%; position: relative; }
+.hero-stack > * { grid-area: 1 / 1; width: 100%; }
 .hero-bloom { position: absolute; inset: 0; pointer-events: none; }
+
+.h-slide {
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.inline-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  padding: 3px 9px 3px 5px;
+  margin: 2px 3px;
+  border-radius: 9999px;
+  border: 1px solid rgba(233, 237, 242, 0.16);
+  background: rgba(15, 19, 28, 0.78);
+  backdrop-filter: blur(8px);
+  color: var(--light-text);
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(10px, 0.9vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  user-select: none;
+}
+.inline-tag:hover {
+  transform: translateY(-1.5px);
+  border-color: var(--accent);
+  background: rgba(255, 77, 0, 0.12);
+}
+.inline-tag-img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.inline-tag-svg-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.inline-tag-svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
 
 /* Ladder */
 .ladder-stage, .ladder-wrap { position: relative; min-height: 300svh; height: 350svh; background: var(--glacier); color: var(--dark-text); }
