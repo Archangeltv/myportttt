@@ -18,28 +18,37 @@ export function HorizontalStatement() {
     const track = trackRef.current;
     const viewport = viewportRef.current;
     if (!section || !track || !viewport) return;
+
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
       const getDistance = () =>
-        Math.max(0, track.scrollWidth - viewport.clientWidth + 48);
+        Math.max(0, track.scrollWidth - window.innerWidth + 48);
+
       const tween = gsap.to(track, {
         x: () => -getDistance(),
         ease: "none",
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: () => `+=${Math.max(window.innerHeight * 1.5, getDistance())}`,
+          end: "bottom bottom",
           scrub: 0.6,
-          pin: viewport,
           invalidateOnRefresh: true,
-          anticipatePin: 1,
         },
       });
+
+      const refresh = () => ScrollTrigger.refresh();
+      window.addEventListener("resize", refresh);
+      if (typeof document !== "undefined" && document.fonts?.ready) {
+        document.fonts.ready.then(refresh);
+      }
+
       return () => {
+        window.removeEventListener("resize", refresh);
         tween.scrollTrigger?.kill();
         tween.kill();
       };
     });
+
     return () => media.revert();
   }, []);
 

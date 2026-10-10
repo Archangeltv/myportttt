@@ -72,8 +72,8 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .rev.in { opacity: 1; transform: none; }
 
 /* Hero */
-.hero-wrap { height: 600svh; position: relative; }
-.hero-stick { position: sticky; top: 0; height: 100svh; overflow: hidden; display: grid; place-items: center; }
+.hero-wrap { height: 600vh; height: 600dvh; position: relative; }
+.hero-stick { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; display: grid; place-items: center; }
 .hero-stack { display: grid; place-items: center; text-align: center; width: 100%; position: relative; }
 .hero-stack > * { grid-area: 1 / 1; width: 100%; }
 .hero-bloom { position: absolute; inset: 0; pointer-events: none; }
@@ -162,8 +162,8 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 }
 
 /* Ladder */
-.ladder-stage, .ladder-wrap { position: relative; min-height: 300svh; height: 350svh; background: var(--glacier); color: var(--dark-text); }
-.ladder-sticky, .ladder-stick { position: sticky; top: 0; display: flex; min-height: 100svh; height: 100svh; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.ladder-stage, .ladder-wrap { position: relative; min-height: 300vh; min-height: 300dvh; height: 350vh; height: 350dvh; background: var(--glacier); color: var(--dark-text); }
+.ladder-sticky, .ladder-stick { position: sticky; top: 0; display: flex; min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh; flex-direction: column; justify-content: space-between; overflow: hidden; }
 .ladder-sticky .section-topline, .ladder-stick .section-topline { border-color: var(--rule-light); }
 .ladder-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(44px, 8vw, 120px); align-items: center; flex: 1; padding-top: 6vh; padding-bottom: 5vh; }
 .ladder-intro { align-self: center; }
@@ -187,13 +187,13 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .ladder-progress i { display: block; width: 100%; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
 
 /* Manifesto */
-.mani-wrap { height: 240svh; position: relative; }
-.mani-stick { position: sticky; top: 0; height: 100svh; display: grid; place-items: center; overflow: hidden; }
+.mani-wrap { height: 240vh; height: 240dvh; position: relative; }
+.mani-stick { position: sticky; top: 0; height: 100vh; height: 100dvh; display: grid; place-items: center; overflow: hidden; }
 .mani-head { --p: 112; -webkit-mask-image: linear-gradient(to bottom, #000 calc(var(--p) * 1% - 12%), transparent calc(var(--p) * 1%)); mask-image: linear-gradient(to bottom, #000 calc(var(--p) * 1% - 12%), transparent calc(var(--p) * 1%)); }
 
 /* Horizontal Statement */
-.statement-stage { position: relative; min-height: 225svh; color: var(--on-dark); background: var(--deep); overflow: clip; }
-.statement-viewport { display: flex; min-height: 100svh; height: 100svh; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.statement-stage { position: relative; min-height: 280vh; min-height: 280dvh; height: 300vh; height: 300dvh; color: var(--on-dark); background: var(--deep); }
+.statement-viewport { position: sticky; top: 0; display: flex; min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh; flex-direction: column; justify-content: space-between; overflow: hidden; }
 .statement-topline { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 78px; padding-top: 18px; border-bottom: 1px solid var(--rule-dark); }
 .statement-topline > span:last-child { color: var(--muted-dark); text-align: right; }
 .statement-track { display: flex; align-items: center; gap: clamp(32px, 5vw, 75px); width: max-content; padding-inline: var(--gutter); white-space: nowrap; will-change: transform; }
@@ -208,7 +208,7 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .statement-mobile { display: none; }
 
 /* Legacy Horizontal aliases */
-.h-pin { height: 100svh; display: flex; align-items: center; overflow: hidden; }
+.h-pin { height: 100vh; height: 100dvh; display: flex; align-items: center; overflow: hidden; }
 .h-track { display: flex; align-items: center; gap: clamp(2rem, 5vw, 5rem); white-space: nowrap; padding-inline: var(--gutter); will-change: transform; }
 .h-track .display { font-size: clamp(5rem, 15vw, 14rem); }
 
@@ -340,8 +340,8 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 .field:focus { outline: none; border-bottom-color: var(--accent); }
 
 @media (max-width: 767px) {
-  .ladder-wrap, .ladder-stage { min-height: 260svh; height: 280svh; }
-  .ladder-stick, .ladder-sticky { position: sticky; top: 0; min-height: 100svh; height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+  .ladder-wrap, .ladder-stage { min-height: 260vh; min-height: 260dvh; height: 280vh; height: 280dvh; }
+  .ladder-stick, .ladder-sticky { position: sticky; top: 0; min-height: 100vh; min-height: 100dvh; height: 100vh; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
   .ladder-grid { grid-template-columns: 1fr; gap: clamp(12px, 2.2vh, 20px); padding-top: clamp(10px, 2vh, 20px); padding-bottom: clamp(10px, 1.8vh, 18px); flex: 1; align-content: center; }
   .ladder-intro { display: flex; flex-direction: column; }
   .ladder-display { font-size: clamp(28px, 7.8vw, 42px); line-height: .9; }
@@ -358,7 +358,7 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
   .ladder-bottom { min-height: 48px; }
   .ladder-bottom > span:first-child { font-size: 7.5px; }
   .ladder-progress { width: 28%; }
-  .mani-wrap { height: 200svh; }
+  .mani-wrap { height: 200vh; height: 200dvh; }
   .work-heading { grid-template-columns: 1fr; gap: 25px; padding-top: 65px; padding-bottom: 45px; }
   .work-intro { justify-self: start; max-width: 450px; font-size: 13px; }
   .project-entry, .project-entry--reverse { grid-template-columns: 1fr; gap: 25px; padding-block: 33px; }
@@ -407,7 +407,7 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
   .principle-arrow { grid-column: 3; grid-row: 1; }
 }
 @media (max-width: 700px) {
-  .statement-stage { min-height: 240svh; overflow: clip; }
+  .statement-stage { min-height: 240vh; min-height: 240dvh; height: 260vh; height: 260dvh; }
   .statement-viewport { display: flex; }
   .statement-mobile { display: none; }
   .statement-topline { min-height: 52px; padding-top: 12px; }
@@ -423,7 +423,7 @@ body { background: var(--ink); color: var(--on-dark); font-family: system-ui, sa
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-wrap, .ladder-wrap, .mani-wrap { height: auto; }
-  .hero-stick, .ladder-stick, .mani-stick { position: static; height: auto; min-height: 100svh; padding-block: 6rem; }
+  .hero-stick, .ladder-stick, .mani-stick { position: static; height: auto; min-height: 100vh; min-height: 100dvh; padding-block: 6rem; }
   .hero-stack > * { grid-area: auto; }
   .hero-stack { gap: 3rem; }
   .ladder-row { opacity: 1; }

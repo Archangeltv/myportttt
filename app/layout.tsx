@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Aimiuwu Victor",
   },
   description:
-    "Aimiuwu Victor Idahosa (Archangel) is a Full Stack Software Developer from Lagos, Nigeria. Building high-performance web applications, bots, smart contracts, and Web3 systems.",
+    "Aimiuwu Victor (Archangel) is a Full Stack Developer from Lagos, Nigeria building high-performance web applications, bots, and Web3 systems.",
   keywords: [
     "Aimiuwu Victor",
     "Aimiuwu Victor Idahosa",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     gender: "male",
     title: "Aimiuwu Victor (Archangel) — Full Stack Software Developer",
     description:
-      "Aimiuwu Victor Idahosa (Archangel) is a Full Stack Software Developer from Lagos, Nigeria building modern web applications, bots, and Web3 systems.",
+      "Full Stack Developer from Lagos, Nigeria building modern web applications, bots, smart contracts, and Web3 systems.",
     url: siteUrl,
     siteName: "Aimiuwu Victor (Archangel)",
     locale: "en_US",
