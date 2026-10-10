@@ -40,7 +40,21 @@ export default function ContactForm() {
           <div>
             <p className="max-w-[48ch] text-[15px] leading-relaxed opacity-85">I&apos;m interested in software engineering roles and projects involving full-stack development, modern web applications, backend systems and Web3.</p>
             <ul className="mt-8 space-y-3">
-              {links.map((l) => <li key={l.label}><a className="nav-link meta" href={l.href}>{l.label}</a></li>)}
+              {links.map((l) => (
+                <li key={l.label}>
+                  <a
+                    className="nav-link meta"
+                    href={l.href}
+                    {...(l.download
+                      ? { download: "Aimiuwu_Victor_CV.pdf", target: "_blank", rel: "noopener noreferrer" }
+                      : l.href.startsWith("http")
+                      ? { target: "_blank", rel: "noreferrer" }
+                      : {})}
+                  >
+                    {l.label} ↗
+                  </a>
+                </li>
+              ))}
               <li><button type="button" onClick={copy} className="meta underline underline-offset-4">{copied ? "Copied" : `Copy ${identity.email}`}</button></li>
             </ul>
           </div>

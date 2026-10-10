@@ -8,8 +8,21 @@ export default function Footer() {
         <div className="meta mt-8 flex flex-wrap items-center justify-between gap-4 opacity-70">
           <span>{identity.nickname} · {identity.title}</span>
           <span>Designed with intent. Built with purpose.</span>
-          <nav aria-label="Footer" className="flex gap-6">
-            {links.map((l) => <a key={l.label} href={l.href} className="nav-link">{l.label}</a>)}
+          <nav aria-label="Footer" className="flex flex-wrap gap-6">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                {...(l.download
+                  ? { download: "Aimiuwu_Victor_CV.pdf", target: "_blank", rel: "noopener noreferrer" }
+                  : l.href.startsWith("http")
+                  ? { target: "_blank", rel: "noreferrer" }
+                  : {})}
+                className="nav-link"
+              >
+                {l.label}
+              </a>
+            ))}
             <a href="#top" className="nav-link">Back to top ↑</a>
           </nav>
           <span>© {new Date().getFullYear()}</span>

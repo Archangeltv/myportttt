@@ -367,10 +367,11 @@ export default function Hero() {
               </h2>
               <div className="h-slide-desc">
                 <p>
-                  I&apos;m naturally introverted, and I genuinely enjoy my own
+                  I&apos;m naturally reserved, and I genuinely enjoy my own
                   space. I&apos;d rather spend time thinking, learning something
-                  new, playing a game, or getting absorbed in an interest that
-                  most people might consider a little too nerdy.
+                  new, watching a documentary, playing a game, or getting
+                  absorbed in an interest that most people might consider a
+                  little too nerdy.
                 </p>
                 <p>
                   I love <InlineTag svg={<MathIcon />} label="Mathematics" />,

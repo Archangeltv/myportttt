@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowDownToLine, Menu, X } from "lucide-react";
 import { identity } from "@/lib/portfolio-data";
 
 const NAV = [
@@ -80,10 +80,19 @@ export function Navigation() {
           <span className="meta hidden opacity-60 sm:inline">{identity.nickname}</span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
           {NAV.map((n) => (
             <a key={n.id} href={`#${n.id}`} className="nav-link meta" aria-current={active === n.id}>{n.label}</a>
           ))}
+          <a
+            href="/Aimiuwu_Victor_CV.pdf"
+            download="Aimiuwu_Victor_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link meta flex items-center gap-1.5 border border-white/20 px-3.5 py-1.5 text-white/90 transition-all duration-300 hover:border-accent hover:text-accent"
+          >
+            CV <ArrowDownToLine size={13} />
+          </a>
           <a href="#contact" className="meta border border-accent bg-accent px-4 py-2 text-ink transition-colors duration-300 hover:bg-transparent hover:text-accent">LET&apos;S TALK ↗</a>
         </nav>
 
@@ -100,6 +109,19 @@ export function Navigation() {
                 <a href={`#${n.id}`} onClick={() => setOpen(false)} className="display block py-4 text-4xl" aria-current={active === n.id}>{n.label}</a>
               </li>
             ))}
+            <li className="border-b border-white/10">
+              <a
+                href="/Aimiuwu_Victor_CV.pdf"
+                download="Aimiuwu_Victor_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="display flex items-center justify-between py-4 text-3xl text-accent"
+              >
+                <span>DOWNLOAD CV</span>
+                <span className="meta text-xs">PDF ↗</span>
+              </a>
+            </li>
             <li className="pt-6"><a href="#contact" onClick={() => setOpen(false)} className="meta inline-block bg-accent px-5 py-3 text-ink">LET&apos;S TALK ↗</a></li>
           </ul>
         </nav>

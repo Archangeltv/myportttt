@@ -66,13 +66,20 @@ export const identity = {
   nickname: "ARCHANGEL",
   title: "FULL STACK SOFTWARE DEVELOPER",
   location: "LAGOS, NIGERIA",
-  email: "aimiuwuvictor@gmail.com",
+  email: "hello@archxngel.cv",
 };
 
 // Add only real URLs; nothing is rendered for missing destinations.
-export const links: { label: string; href: string }[] = [
+export const links: { label: string; href: string; download?: boolean }[] = [
+  { label: "GitHub", href: "https://github.com/Archangeltv" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/thearchangel/" },
   { label: "X / Twitter", href: "https://x.com/AimiuwuVictor" },
   { label: "Email", href: `mailto:${identity.email}` },
+  { label: "Download CV", href: "/Aimiuwu Victor.pdf", download: true },
+  {
+    label: "Recommendation Letter",
+    href: "/Kingdomly_Recommendation_Letter.pdf",
+  },
 ];
 
 export const education = {
