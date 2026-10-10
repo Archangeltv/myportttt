@@ -123,6 +123,8 @@ function InlineTag({
           width={18}
           height={18}
           className="inline-tag-img"
+          loading="lazy"
+          decoding="async"
         />
       ) : svg ? (
         <span className="inline-tag-svg-wrap" aria-hidden="true">{svg}</span>

@@ -56,6 +56,8 @@ function ProjectArtwork({
               width={600}
               height={400}
               className="project-art-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
