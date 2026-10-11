@@ -333,7 +333,7 @@ export const experience: Experience[] = [
     period: "JUL 2023 — SEP 2025",
     location: "REMOTE · AUSTIN, TEXAS",
     summary:
-      "Built blockchain data pipelines across Ethereum, Polygon, Avalanche, and Arbitrum, and migrated the data layer from Firebase to PostgreSQL for performance at scale.",
+      "Built blockchain data pipelines across Ethereum, Base, Berachain, Megaeth and Arbitrum, and migrated the data layer from Firebase to PostgreSQL for performance at scale.",
     highlights: [
       "Wrote and shipped Solidity contracts for NFT minting, staking, and rental.",
       "Integrated the Safe Wallet SDK for multi-signature treasury management.",
@@ -392,13 +392,7 @@ export const experience: Experience[] = [
       "Integrated payment APIs, FX conversion, and virtual card flows.",
       "Worked alongside product and backend to keep money movement reliable on the client side.",
     ],
-    tech: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "REST APIs",
-    ],
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
   },
 ];
 
